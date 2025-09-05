@@ -385,6 +385,7 @@
             } else if (nextReminder) {
                 const timeUntil = nextReminder.totalMinutes - (new Date().getHours() * 60 + new Date().getMinutes());
                 const hoursUntil = Math.floor(timeUntil / 60);
+                const minutesUntil = timeUntil % 60;
                 
                 let timeString = "";
                 if (hoursUntil > 0) {
