@@ -250,6 +250,27 @@
             }, duration);
         }
         
+        function showAlertOverlay(title, message) {
+            const overlay = document.getElementById('alert-overlay');
+            const titleElement = document.getElementById('alert-title');
+            const messageElement = document.getElementById('alert-message');
+            
+            titleElement.textContent = title;
+            messageElement.textContent = message;
+            
+            overlay.classList.remove('hidden');
+            
+            // Auto close after 15 seconds
+            setTimeout(() => {
+                closeAlertOverlay();
+            }, 15000);
+        }
+        
+        function closeAlertOverlay() {
+            const overlay = document.getElementById('alert-overlay');
+            overlay.classList.add('hidden');
+        }
+        
         function addLog(message, type = 'info') {
             const log = document.getElementById('log');
             const timestamp = new Date().toLocaleTimeString('th-TH');
